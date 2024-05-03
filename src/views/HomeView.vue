@@ -1,4 +1,5 @@
 <template>
+  <RouterView />
   <div class="row text-center">
     <div class="col-lg-2 col-md-3 col-6 p-2">
       <RouterLink to="/">Home</RouterLink>
@@ -55,6 +56,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-</style>

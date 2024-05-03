@@ -3,13 +3,24 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: () => import('../views/HomeView.vue')
-  },
-  {
-    path: '/commonProblem',
-    name: 'CommonProblem',
-    component: () => import('../views/CommonProblem.vue')
+    name: 'Front',
+    component: () => import('../views/FrontView.vue'),
+    children: [
+      {
+        path: '*',
+        redirect: '/'
+      },
+      {
+        path: '',
+        name: 'Index',
+        component: () => import('../views/HomeView.vue')
+      },
+      {
+        path: '/commonProblem',
+        name: 'CommonProblem',
+        component: () => import('../views/CommonProblem.vue')
+      }
+    ]
   }
 ]
 
